@@ -16,7 +16,7 @@ def process_data(raw):
     res = raw.copy()
     res = res.merge(by_store[["store"]], on="store")
 
-    res.loc[res["stateholiday"] != 0, "stateholiday"] = 1
+    # res.loc[res["stateholiday"] != 0, "stateholiday"] = 1
     res = res.drop("customers", axis=1)
     res.to_csv("rossmann.csv", index=False)
     return res
