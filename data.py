@@ -18,5 +18,5 @@ def process_data(raw):
 
     res.loc[res["stateholiday"] != 0, "stateholiday"] = 1
     res = res.drop("customers", axis=1)
-    res.to_csv("rossmann.csv")
+    res.to_csv("rossmann.csv", index=False)
     return res
